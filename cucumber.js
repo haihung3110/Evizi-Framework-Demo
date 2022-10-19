@@ -1,5 +1,5 @@
 let common = [
-    'Evizi.features/**/*.feature',
+    'features/**/*.feature',
     '--require-module ts-node/register',
     '--require step-definitions/**/*.ts',
     '--format progress-bar',
