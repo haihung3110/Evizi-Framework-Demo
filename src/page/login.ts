@@ -28,6 +28,5 @@ export class Login {
 
   public async Result() {
     await this.driver.findElement(result);
-    console.log(result);
   }
 }
