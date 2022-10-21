@@ -1,15 +1,20 @@
 import { binding, given, then, when } from "cucumber-tsflow";
-import { Builder, By, until, WebDriver } from "selenium-webdriver";
-import { Login } from "../page/Login";
+import { Builder, WebDriver } from "selenium-webdriver";
+import { Login } from "../page/login";
+import { Home } from "../page/home";
+import assert from "assert";
+require("chromedriver");
 
 let driver: WebDriver;
+var { setDefaultTimeout } = require("cucumber");
+setDefaultTimeout(60 * 1000);
 
 @binding()
 export class LoginAccountSteps {
-  @given(/Go to page Jira/)
-  public async navigateToWebsite() {
+  @given(/Go to page Jira "([^"]*)"/)
+  public async navigateToWebsite(url: string) {
     driver = new Builder().forBrowser("chrome").build();
-    await driver.get(`https://id.atlassian.com/login`);
+    await driver.get(`${url}`);
   }
 
   @when(/User enter "([^"]*)" and click continue button/)
@@ -25,8 +30,9 @@ export class LoginAccountSteps {
   }
 
   @then(/User enter your work page/)
-  public async resultMessage() {
-    let loginPage = new Login(driver);
-    await loginPage.Result();
+  public async isUserOnWorkPage() {
+    let homePage = new Home(driver);
+    let isOnHomePage = await homePage.isAt();
+    assert.equal(isOnHomePage, true);
   }
 }
