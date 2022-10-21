@@ -1,8 +1,11 @@
 # Evizi-Framework-Demo
 
-# Set up project to run tests
+before run test you have check config in package.json and run all commands in Setup project to run
+
+# Setup project to run tests
 
 - npm install
-- npm i -D @types/cucumber @types/chai
+- npm i -D @types/cucumber
 - npm i @cucumber/cucumber
+- npm i @types/selenium-webdriver
 - npm tests
