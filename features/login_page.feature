@@ -1,5 +1,6 @@
 Feature: Login Jira
 
+  @Login
   Scenario: Login
     Given Go to page Jira "https://id.atlassian.com/login"
     When User enter "Hung.phan@evizi.com" and click continue button
