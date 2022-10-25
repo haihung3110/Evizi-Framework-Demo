@@ -1,9 +1,5 @@
 {
   "cucumberautocomplete.steps": ["src/step-definitions/*.step.ts"],
   "cucumberautocomplete.syncfeatures": "test/features/*.feature",
-  "cucumberautocomplete.strictGherkinCompletion": true,
-  "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 500,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true
+  "cucumberautocomplete.strictGherkinCompletion": true
 }
