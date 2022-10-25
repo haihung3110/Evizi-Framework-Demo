@@ -1,8 +1,6 @@
-import assert from "assert";
 import { Given, When, Then, Before, World } from "cucumber";
 import { Builder, WebDriver } from "selenium-webdriver";
 import { Constants } from "../common/constants";
-import { Home } from "../page/home";
 import { Login } from "../page/login";
 import { Projects } from "../page/projects";
 
@@ -20,7 +18,7 @@ Before(async function (this: World) {
 });
 
 Given(/^User is on start page/, async () => {
-  //Nothing
+  return;
 });
 
 When(/^User click Jira Work Management$/, async () => {
