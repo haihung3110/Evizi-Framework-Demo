@@ -1,4 +1,3 @@
-import { World } from "cucumber";
 import { By, WebDriver } from "selenium-webdriver";
 
 export class Projects {
@@ -9,22 +8,22 @@ export class Projects {
   }
 
   jiraWorkManagementBtn = By.xpath(
-    `//div[@data-testid='start-product__JIRA_BUSINESS_7faa1f50-6795-4580-990d-f2cdb97e0605']`
+    `//button[contains(.,'Jira Work Management') and contains(.,'hungphan-training-fresher')]`
   );
 
   projectsTopHeadBtn = By.xpath(`//button[.='Projects']`);
 
   createProjectsBtn = By.xpath(`//button[starts-with(.,'Create project')]`);
 
-  public async clickJiraWorkManagement(this: World) {
+  public async clickJiraWorkManagement() {
     await this.driver.findElement(this.jiraWorkManagementBtn).click();
   }
 
-  public async clickProjectTopHead(this: World) {
+  public async clickProjectTopHead() {
     await this.driver.findElement(this.projectsTopHeadBtn).click();
   }
 
-  public async clickCreateProject(this: World) {
+  public async clickCreateProject() {
     await this.driver.findElement(this.createProjectsBtn).click();
   }
 }

@@ -4,7 +4,6 @@ export class Home {
   driver: WebDriver;
 
   profileBtn = By.xpath(`//button[@data-testid="nav__profile-menu-trigger"]`);
-  projectBtn = By.xpath(`//p[text()='Evizi-Hung-Training']`);
 
   constructor(driver: WebDriver) {
     this.driver = driver;
@@ -16,9 +15,5 @@ export class Home {
    */
   public async isAt() {
     return this.driver.findElement(this.profileBtn).isDisplayed();
-  }
-
-  public async isAtWorkPage() {
-    return this.driver.findElement(this.projectBtn).isDisplayed();
   }
 }
