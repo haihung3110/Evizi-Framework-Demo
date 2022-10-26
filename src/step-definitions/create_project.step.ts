@@ -1,6 +1,7 @@
-import { Given, When, Then, Before, World } from "cucumber";
+import { Given, When, Then, Before, World, BeforeAll } from "cucumber";
 import { Builder, WebDriver } from "selenium-webdriver";
 import { Constants } from "../common/constants";
+import { stepTimeOut } from "../common/timeouts";
 import { Login } from "../page/login";
 import { Projects } from "../page/projects";
 
@@ -9,7 +10,7 @@ require("chromedriver");
 let driver: WebDriver;
 let project: Projects;
 
-Before(async function (this: World) {
+BeforeAll({ timeout: stepTimeOut }, async function () {
   driver = new Builder().forBrowser("chrome").build();
   await driver.get(Constants.LOGIN_URL);
   let loginPage = new Login(driver);
@@ -17,21 +18,34 @@ Before(async function (this: World) {
   await loginPage.setUserPassword(Constants.DEFAULT_PASSWORD);
 });
 
-Given(/^User is on start page/, async () => {
+Before(async function (this: World) {
+  if (!this.driver) {
+    this.driver = driver;
+  }
+});
+
+Given(/^User is on start page/, async function (this: World) {
   return;
 });
 
-When(/^User click Jira Work Management$/, async () => {
+When(/^User click Jira Work Management$/, async function (this: World) {
   project = new Projects(driver);
   await project.clickJiraWorkManagement();
 });
 
-When(/^User click Projects button in top header$/, async () => {
-  project = new Projects(driver);
-  await project.clickProjectTopHead();
-});
+When(
+  /^User click Projects button in top header$/,
+  async function (this: World) {
+    project = new Projects(driver);
+    await project.clickProjectTopHead();
+  }
+);
 
-When(/^User click Create project in drop down menu$/, async () => {
-  project = new Projects(driver);
-  await project.clickCreateProject();
-});
+When(
+  /^User click Create project in drop down menu$/,
+  async function (this: World) {
+    project = new Projects(driver);
+    await project.clickCreateProject();
+    await driver.sleep(10000);
+  }
+);
