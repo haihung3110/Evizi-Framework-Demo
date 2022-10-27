@@ -14,6 +14,4 @@ Feature: Project
     Given User is on project was created
     When Select Projects button in top header
     And User select view all projects item from drop down menu
-    And User select "All Jira Product" filters
-    And User select item from drop down menu
     Then All projects with type "Jira Work Management" displays

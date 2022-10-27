@@ -39,7 +39,6 @@ Then(
   /^All project with type "Jira Work Management" displays/,
   async function (this: World) {
     searchProjectsByFilter = new SearchProjectByFilterPage(this.driver);
-    let isProjectByFilterDisplays =
-      await searchProjectsByFilter.isDisplayProjectsByFilter();
+    await searchProjectsByFilter.isDisplayProjectsByFilter();
   }
 );
