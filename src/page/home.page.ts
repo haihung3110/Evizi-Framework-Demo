@@ -5,7 +5,6 @@ export class Home {
 
   profileBtn = By.xpath(`//button[@data-testid="nav__profile-menu-trigger"]`);
 
- 
 
   constructor(driver: WebDriver) {
     this.driver = driver;

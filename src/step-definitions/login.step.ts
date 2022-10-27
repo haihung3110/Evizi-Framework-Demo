@@ -30,7 +30,7 @@ When(
   }
 );
 
-Then(/User enter your work page/, async function isUserOnWorkPage() {
+Then(/User enter your work page/, async function () {
   let homePage = new Home(driver);
   let isOnHomePage = await homePage.isAt();
   assert.equal(isOnHomePage, true);
