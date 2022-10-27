@@ -22,10 +22,10 @@ export class SearchProjectByFilterPage {
   // method for search project by filter
 
   public async isCurrentProjectCreated() {
-    await this.driver.findElement(this.projectNameLabel).isDisplayed()
+    await this.driver.findElement(this.projectNameLabel).isDisplayed();
   }
 
-  public async clickProjectTopHead() {
+  public async clickProjectsTopHead() {
     await this.driver.findElement(this.projectsTopHeadBtn).click();
   }
 

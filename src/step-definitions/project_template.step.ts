@@ -1,6 +1,5 @@
 import { When, Then, World } from "cucumber";
 import { ProjectTemplatesPage } from "../page/projects_template.page";
-
 import { assert } from "chai";
 
 require("chromedriver");
