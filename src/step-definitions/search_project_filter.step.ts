@@ -45,10 +45,7 @@ When(/^User select item from drop down menu/, async function (this: World) {
 Then(
   /^All project with type "Jira Work Management" displays/,
   async function (this: World) {
-    // searchProjectsByFilter = new SearchProjectByFilterPage(this.driver);
-    // let isProjectByFilterDisplays =
-    //   await searchProjectsByFilter.isDisplayProjectsByFilter();
-    // assert.equal(isProjectByFilterDisplays, true);
-    return;
+    searchProjectsByFilter = new SearchProjectByFilterPage(this.driver);
+    await searchProjectsByFilter.isDisplayProjectsByFilter();
   }
 );
