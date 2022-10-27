@@ -8,5 +8,5 @@ let searchProjectsByFilter = SearchProjectByFilterPage;
 
 //define step for SearchProjectByFilterStep
 Given(/^User is on start page/, async function (this: World) {
-  return;
+  
 });

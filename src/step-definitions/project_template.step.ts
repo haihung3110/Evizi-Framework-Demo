@@ -1,10 +1,12 @@
 import { When, Then, World } from "cucumber";
 import { ProjectTemplatesPage } from "../page/projects_template.page";
-
+import { Home } from "../page/home.page";
+import { assert } from "chai";
 
 require("chromedriver");
 
 let projectTemplate: ProjectTemplatesPage;
+let projectWasCreated: Home;
 
 When(/^User select Project management template/, async function (this: World) {
   projectTemplate = new ProjectTemplatesPage(this.driver);
@@ -28,6 +30,7 @@ When(/^User select Create button$/, async function (this: World) {
 Then(
   /^New project "Framework-Management-Issue" displays$/,
   async function (this: World) {
-    return;
+    let isOnProjectPageCreate = await projectWasCreated.isAtNewProjectDisplay();
+    assert.equal(isOnProjectPageCreate, true);
   }
 );
