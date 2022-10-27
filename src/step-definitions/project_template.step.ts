@@ -10,7 +10,7 @@ let projectTemplate: ProjectTemplatesPage;
 When(/^User select Project management template/, async function (this: World) {
   projectTemplate = new ProjectTemplatesPage(this.driver);
   await projectTemplate.clickWordManagementInTemplateLabel();
-  await this.driver.sleep(10000);
+  await this.driver.sleep(5000);
 });
 
 When(
@@ -23,15 +23,15 @@ When(
 
 When(/^User select Create button$/, async function (this: World) {
   projectTemplate = new ProjectTemplatesPage(this.driver);
+  await this.driver.sleep(2000);
   await projectTemplate.clickCreateProjectTemplateBtn();
+  await this.driver.sleep(5000);
 });
 
 Then(
   /^New project "Framework-Management-Issue" displays$/,
   async function (this: World) {
-    // projectTemplate = new ProjectTemplatesPage(this.driver);
-    // let isOnProjectCreated = await projectTemplate.isAtNewProjectDisplay();
-    // assert.equal(isOnProjectCreated, true);
-    return;
+    let isOnProjectPageCreate = await projectTemplate.isAtNewProjectDisplay();
+    assert.equal(isOnProjectPageCreate, true);
   }
 );
