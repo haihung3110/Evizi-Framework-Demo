@@ -18,13 +18,4 @@ export class Home {
   public async isAt() {
     return this.driver.findElement(this.profileBtn).isDisplayed();
   }
-
-  /**
-   * Determine whether we're on project was created.
-   * Return: True if new project displayed. Otherwise, return False
-   */
-
-  public async isAtNewProjectDisplay() {
-    return this.driver.findElement(this.projectNameLabel).isDisplayed();
-  }
 }

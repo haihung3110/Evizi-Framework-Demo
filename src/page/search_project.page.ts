@@ -15,7 +15,15 @@ export class SearchProjectByFilterPage {
 
   itemFromFilter = By.xpath(`//div[@id='react-select-17-option-3']`);
 
+  projectNameLabel = By.xpath(
+    `//nav[@aria-label='Breadcrumbs']//following::li//span`
+  );
+
   // method for search project by filter
+
+  public async isCurrentProjectCreated() {
+    await this.driver.findElement(this.projectNameLabel).isDisplayed()
+  }
 
   public async clickProjectTopHead() {
     await this.driver.findElement(this.projectsTopHeadBtn).click();
