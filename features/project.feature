@@ -12,7 +12,8 @@ Feature: Project
 
   Scenario: Search projects by filters
     Given User is on project was created
-    When Select Project button in top header
+    When Select Projects button in top header
     And User select view all projects item from drop down menu
-    And User select "All Jira Product" filters
-    And User select item from drop down menu
+    # And User select "All Jira Product" filters
+    # And User select item from drop down menu
+    Then All project with type "Jira Work Management" displays

@@ -19,6 +19,8 @@ export class SearchProjectByFilterPage {
     `//nav[@aria-label='Breadcrumbs']//following::li//span`
   );
 
+  filterLabel = By.xpath(`//div[text()='Jira Work Management']`)
+
   // method for search project by filter
 
   public async isCurrentProjectCreated() {
@@ -39,5 +41,9 @@ export class SearchProjectByFilterPage {
 
   public async selectItemFormFilter() {
     await this.driver.findElement(this.itemFromFilter).click();
+  }
+
+  public async isDisplayProjectsByFilter(){
+    await this.driver.findElement(this.filterLabel).isDisplayed()
   }
 }

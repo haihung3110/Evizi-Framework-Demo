@@ -5,8 +5,6 @@ export class Home {
 
   profileBtn = By.xpath(`//button[@data-testid="nav__profile-menu-trigger"]`);
 
-  projectNameLabel = By.xpath(`//nav[@aria-label='Breadcrumbs']//following::li//span`)
-
   constructor(driver: WebDriver) {
     this.driver = driver;
   }

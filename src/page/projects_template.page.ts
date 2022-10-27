@@ -7,12 +7,6 @@ export class ProjectTemplatesPage {
     this.driver = driver;
   }
   //elements for project template page
-  leftNavigator = By.xpath(
-    `//div[starts-with(@data-testid, 'project-template-select') and contains(@data-testid, 'navigation')]`
-  );
-
-  leftNavigationItem =
-    "//div[starts-with(@data-testid, 'project-template-select') and contains(@data-testid, 'navigation')]//button[.='{0}']";
 
   workManagementTemplateBtn = By.xpath(
     `//button[contains(@data-testid,'template-list-button') and @aria-label='Project management']`
