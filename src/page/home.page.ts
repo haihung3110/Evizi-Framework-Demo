@@ -5,7 +5,7 @@ export class Home {
 
   profileBtn = By.xpath(`//button[@data-testid="nav__profile-menu-trigger"]`);
 
-  projectNameLabel = By.xpath(`//nav[@aria-label='Breadcrumbs']//following::li//span`)
+ 
 
   constructor(driver: WebDriver) {
     this.driver = driver;
@@ -19,12 +19,5 @@ export class Home {
     return this.driver.findElement(this.profileBtn).isDisplayed();
   }
 
-  /**
-   * Determine whether we're on project was created.
-   * Return: True if new project displayed. Otherwise, return False
-   */
-
-  public async isAtNewProjectDisplay() {
-    return this.driver.findElement(this.projectNameLabel).isDisplayed();
-  }
+  
 }

@@ -6,12 +6,11 @@ import { assert } from "chai";
 require("chromedriver");
 
 let projectTemplate: ProjectTemplatesPage;
-let projectWasCreated: Home;
 
 When(/^User select Project management template/, async function (this: World) {
   projectTemplate = new ProjectTemplatesPage(this.driver);
   await projectTemplate.clickWordManagementInTemplateLabel();
-  await this.driver.sleep(10000);
+  await this.driver.sleep(5000);
 });
 
 When(
@@ -24,14 +23,15 @@ When(
 
 When(/^User select Create button$/, async function (this: World) {
   projectTemplate = new ProjectTemplatesPage(this.driver);
+  await this.driver.sleep(2000);
   await projectTemplate.clickCreateProjectTemplateBtn();
+  await this.driver.sleep(5000);
 });
 
 Then(
   /^New project "Framework-Management-Issue" displays$/,
   async function (this: World) {
-    // let isOnProjectPageCreate = await projectWasCreated.isAtNewProjectDisplay();
-    // assert.equal(isOnProjectPageCreate, true);
-    return;
+    let isOnProjectPageCreate = await projectTemplate.isAtNewProjectDisplay();
+    assert.equal(isOnProjectPageCreate, true);
   }
 );
