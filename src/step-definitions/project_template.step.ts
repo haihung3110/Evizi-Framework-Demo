@@ -34,6 +34,5 @@ Then(
     let isOnProjectPageCreate = await projectTemplate.isAtNewProjectDisplay();
     assert.equal(isOnProjectPageCreate, true);
     await this.driver.sleep(5000);
-
   }
 );
