@@ -17,3 +17,6 @@ Feature: Project
     And User select "All Jira Product" filters
     And User select item from drop down menu
     Then All projects with type "Jira Work Management" displays
+
+
+
