@@ -19,7 +19,7 @@ export class SearchProjectByFilterPage {
     `//nav[@aria-label='Breadcrumbs']//following::li//span`
   );
 
-  filterLabel = By.xpath(`//div[text()='Jira Work Management']`)
+  filterLabel = By.xpath(`//div[text()='Jira Work Management']`);
 
   // method for search project by filter
 
@@ -27,7 +27,9 @@ export class SearchProjectByFilterPage {
     await this.driver.findElement(this.projectNameLabel).isDisplayed();
   }
 
-  public async clickProjectsTopHead() {
+  // method for search project by filter
+
+  public async clickProjectTopHead() {
     await this.driver.findElement(this.projectsTopHeadBtn).click();
   }
 
@@ -43,7 +45,7 @@ export class SearchProjectByFilterPage {
     await this.driver.findElement(this.itemFromFilter).click();
   }
 
-  public async isDisplayProjectsByFilter(){
-    await this.driver.findElement(this.filterLabel).isDisplayed()
+  public async isDisplayProjectsByFilter() {
+    await this.driver.findElement(this.filterLabel).isDisplayed();
   }
 }
