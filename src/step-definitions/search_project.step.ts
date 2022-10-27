@@ -1,6 +1,4 @@
-import { assert } from "chai";
-import { Given, When, Then, World, Before } from "cucumber";
-import { WebDriver } from "selenium-webdriver";
+import { Given, When, Then, World } from "cucumber";
 import { SearchProjectByFilterPage } from "../page/search_project.page";
 
 require("chromedriver");

@@ -15,3 +15,8 @@ Feature: Project
     When Select Projects button in top header
     And User select view all projects item from drop down menu
     Then All project with type "Jira Work Management" displays
+
+  Scenario: Search projects by name project
+    Given User is Jira projects page
+    When User enter name project in search field
+    Then Projects with name in search field displays
