@@ -1,5 +1,5 @@
 import { Given, When, Then, World } from "cucumber";
-import { SearchProjectByFilterPage } from "../page/search_project.page";
+import { SearchProjectByFilterPage } from "../page/search_project_filter.page";
 
 require("chromedriver");
 
