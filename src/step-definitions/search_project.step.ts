@@ -28,19 +28,10 @@ When(
   }
 );
 
-// When(/^User select "All Jira Product" filters/, async function (this: World) {
-//   searchProjectsByFilter = new SearchProjectByFilterPage(this.driver);
-//   await searchProjectsByFilter.openFilterProjectsItems();
-//   await this.driver.sleep(5000);
-// });
-
 Then(
   /^All project with type "Jira Work Management" displays/,
   async function (this: World) {
-    // searchProjectsByFilter = new SearchProjectByFilterPage(this.driver);
-    // let isProjectByFilterDisplays =
-    //   await searchProjectsByFilter.isDisplayProjectsByFilter();
-    // assert.equal(isProjectByFilterDisplays, true);
-    return;
+    searchProjectsByFilter = new SearchProjectByFilterPage(this.driver);
+    await searchProjectsByFilter.isDisplayProjectsByFilter();
   }
 );
