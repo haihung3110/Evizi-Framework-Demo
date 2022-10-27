@@ -1,36 +1,36 @@
 import { When, Then, World } from "cucumber";
-import { ProjectTemplatesPage } from "../page/projects_template";
-import { stepTimeOut } from "../common/timeouts";
+import { ProjectTemplatesPage } from "../page/projects_template.page";
+import { Home } from "../page/home.page";
+import { assert } from "chai";
 
 require("chromedriver");
 
 let projectTemplate: ProjectTemplatesPage;
+let projectWasCreated: Home;
 
-// Before(async function (this: World) {
-//   if (this.driver) {
-//     driver = this.driver;
-//   }
-// });
-
-When(/^User click Project management template/, async function (this: World) {
+When(/^User select Project management template/, async function (this: World) {
   projectTemplate = new ProjectTemplatesPage(this.driver);
   await projectTemplate.clickWordManagementInTemplateLabel();
-  await this.driver.sleep(15000);
+  await this.driver.sleep(10000);
 });
 
 When(
-  /^Enter project name "([^"]*)"$/,
+  /^User create project with name "([^"]*)" on project create page$/,
   async function (this: World, nameProject: string) {
     projectTemplate = new ProjectTemplatesPage(this.driver);
     await projectTemplate.enterProjectNameForProjectManagement(nameProject);
   }
 );
 
-When(/^User click Create button$/, async function (this: World) {
+When(/^User select Create button$/, async function (this: World) {
   projectTemplate = new ProjectTemplatesPage(this.driver);
   await projectTemplate.clickCreateProjectTemplateBtn();
 });
 
-Then(/^User is on project has been created$/, async function (this: World) {
-  return;
-});
+Then(
+  /^New project "Framework-Management-Issue" displays$/,
+  async function (this: World) {
+    let isOnProjectPageCreate = await projectWasCreated.isAtNewProjectDisplay();
+    assert.equal(isOnProjectPageCreate, true);
+  }
+);

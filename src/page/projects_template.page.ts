@@ -1,5 +1,5 @@
-import { By, until, WebDriver } from "selenium-webdriver";
-import { String } from "typescript-string-operations";
+import { By, WebDriver } from "selenium-webdriver";
+
 export class ProjectTemplatesPage {
   driver: WebDriver;
 
@@ -26,19 +26,9 @@ export class ProjectTemplatesPage {
     `//div[@data-test-id='project-create.create-screen-with-project-type-dropdown.submit-button']//button[.='Create']`
   );
 
-  //method for project template page
-  // public async openLeftMenu(item: String) {
-  //   let leftNavigationItemLocator = String.format(
-  //     this.leftNavigationItem,
-  //     item
-  //   );
-  //   await this.driver.findElement(By.xpath(leftNavigationItemLocator)).click();
-  // }
-
+  // method for creating a new project
   public async clickWordManagementInTemplateLabel() {
-    // await this.openLeftMenu("Work management");
     await this.driver.findElement(this.workManagementTemplateBtn).click();
-    // await this.driver.sleep(10000);
   }
 
   public async enterProjectNameForProjectManagement(nameProject: string) {
