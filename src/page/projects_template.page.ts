@@ -23,21 +23,12 @@ export class ProjectTemplatesPage {
   );
 
   createProjectsBtn = By.xpath(
-    `//div[@data-test-id='project-create.create-screen-with-project-type-dropdown.submit-button']//button[@type='button']`
+    `//div[@data-test-id="project-create.create-screen-with-project-type-dropdown.submit-button"]//button`
   );
 
   projectNameLabel = By.xpath(
     `//nav[@aria-label='Breadcrumbs']//following::li//span`
   );
-
-  /**
-   * Determine whether we're on project was created.
-   * Return: True if new project displayed. Otherwise, return False
-   */
-
-  public async isAtNewProjectDisplay() {
-    return this.driver.findElement(this.projectNameLabel).isDisplayed();
-  }
 
   // method for creating a new project
   public async clickWordManagementInTemplateLabel() {
@@ -52,5 +43,14 @@ export class ProjectTemplatesPage {
 
   public async clickCreateProjectTemplateBtn() {
     await this.driver.findElement(this.createProjectsBtn).click();
+  }
+
+  /**
+   * Determine whether we're on project was created.
+   * Return: True if new project displayed. Otherwise, return False
+   */
+
+  public async isAtNewProjectDisplay() {
+    return this.driver.findElement(this.projectNameLabel).isDisplayed();
   }
 }

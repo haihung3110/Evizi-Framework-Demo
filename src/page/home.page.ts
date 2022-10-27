@@ -18,6 +18,4 @@ export class Home {
   public async isAt() {
     return this.driver.findElement(this.profileBtn).isDisplayed();
   }
-
-  
 }
