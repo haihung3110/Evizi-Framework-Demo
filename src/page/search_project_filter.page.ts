@@ -27,9 +27,7 @@ export class SearchProjectByFilterPage {
     await this.driver.findElement(this.projectNameLabel).isDisplayed();
   }
 
-  // method for search project by filter
-
-  public async clickProjectTopHead() {
+  public async clickProjectsTopHead() {
     await this.driver.findElement(this.projectsTopHeadBtn).click();
   }
 
