@@ -1,10 +1,30 @@
-import { Given, When, Then, World } from "cucumber";
-import { SearchProjectsByNamePage } from "../step-definitions/search_project_name.step";
+import { WebDriver, By } from "selenium-webdriver";
 
-require("chromedriver");
+export class SearchProjectsByNamePage {
+  driver: WebDriver;
 
-let searchProjectsByName: SearchProjectsByNamePage;
+  constructor(driver: WebDriver) {
+    this.driver = driver;
+  }
 
-Given(/^/, async function (this: World) {
-  searchProjectsByName = new SearchProjectsByNamePage(this.driver);
-});
+  //implement for locator for SearchProjectsByName
+
+  searchField = By.xpath(`//input[@name='search']`);
+
+  projectPageLabel = By.xpath(``)
+
+  //implement method for SearchProjectsByName
+
+  public async isCurrentProjectPage() {
+    await this.driver.findElement(this.projectPageLabel).isDisplayed();
+  }
+  
+  public async enterNameProject(name: string) {
+    await this.driver.findElement(this.searchField).sendKeys(name);
+  }
+
+  public async isProjectNameDisplayed() {
+    await this.driver.findElement(this.projectPageLabel).isDisplayed();
+  }
+
+}
