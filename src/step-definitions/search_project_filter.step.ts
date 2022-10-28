@@ -35,15 +35,3 @@ Then(
     await searchProjectsByFilter.isDisplayProjectsByFilter();
   }
 );
-
-When(/^User select item from drop down menu/, async function (this: World) {
-  await searchProjectsByFilter.selectItemFormFilter();
-});
-
-Then(
-  /^All project with type "Jira Work Management" displays/,
-  async function (this: World) {
-    searchProjectsByFilter = new SearchProjectByFilterPage(this.driver);
-    await searchProjectsByFilter.isDisplayProjectsByFilter();
-  }
-);
