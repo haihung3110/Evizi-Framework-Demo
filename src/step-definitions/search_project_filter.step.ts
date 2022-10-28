@@ -28,15 +28,7 @@ When(
 );
 
 Then(
-  /^All project with type "Jira Work Management" displays/,
-  async function (this: World) {
-    searchProjectsByFilter = new SearchProjectByFilterPage(this.driver);
-    await searchProjectsByFilter.isDisplayProjectsByFilter();
-  }
-);
-
-Then(
-  /^All project with type "Jira Work Management" displays/,
+  /^All projects with type "Jira Work Management" displays/,
   async function (this: World) {
     searchProjectsByFilter = new SearchProjectByFilterPage(this.driver);
     await searchProjectsByFilter.isDisplayProjectsByFilter();
