@@ -1,5 +1,4 @@
-import { assert } from "chai";
-import { Given, When, Then, World } from "cucumber";
+import { Given, When, Then } from "cucumber";
 import { SearchProjectsByNamePage } from "../page/search_project_name.page";
 
 require("chromedriver");
@@ -16,7 +15,14 @@ When(
   async function (nameOfProject: string) {
     searchProjectsByName = new SearchProjectsByNamePage(this.driver);
     await searchProjectsByName.enterNameProject(nameOfProject);
+    await this.driver.sleep(4000);
   }
 );
 
-Then(/^Projects with name in search field displays/, async function () {});
+Then(
+  /^Projects with name in search field displays/,
+  async function (nameProjectInSearchField: string) {
+    searchProjectsByName = new SearchProjectsByNamePage(this.driver);
+    await searchProjectsByName.isProjectNameDisplayed(nameProjectInSearchField);
+  }
+);

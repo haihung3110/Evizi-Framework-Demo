@@ -11,20 +11,21 @@ export class SearchProjectsByNamePage {
 
   searchField = By.xpath(`//input[@name='search']`);
 
-  projectPageLabel = By.xpath(``)
+  isProjectsDisplayed = By.xpath(`//tr[td[.='']]//div[.='Evizi-Hung-Training']`);
 
   //implement method for SearchProjectsByName
 
   public async isCurrentProjectPage() {
-    await this.driver.findElement(this.projectPageLabel).isDisplayed();
+    await this.driver.findElement(this.isProjectsDisplayed).isDisplayed();
   }
-  
+
   public async enterNameProject(name: string) {
     await this.driver.findElement(this.searchField).sendKeys(name);
   }
 
-  public async isProjectNameDisplayed() {
-    await this.driver.findElement(this.projectPageLabel).isDisplayed();
+  public async isProjectNameDisplayed(nameProjectInSearchField: string) {
+    await this.driver
+      .findElement(this.isProjectsDisplayed)
+      .sendKeys(nameProjectInSearchField);
   }
-
 }

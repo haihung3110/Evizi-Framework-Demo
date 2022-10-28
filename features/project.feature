@@ -1,6 +1,8 @@
 Feature: Project
+  Verify that user can perform
+  the functions of the project module
 
-  Scenario: Create new project
+  Scenario: PRO_01: Create new project
     Given User is on start page
     When User open Jira Work Management
     And User select Projects button in top header
@@ -10,13 +12,15 @@ Feature: Project
     And User select Create button
     Then New project "Framework-Management-Issue" displays
 
-  Scenario: Search projects by filters
-    Given User is on project was created
-    When Select Projects button in top header
-    And User select view all projects item from drop down menu
-    Then All project with type "Jira Work Management" displays
+  Scenario: PRO_02: List projects by filters
+    Given User click Project button in top header
+    When User click View all projects item
+    And User select All Jira Product filed
+    And User select item Jira Work Management
+    Then All projects with type "Jira Work Management" displays
 
-  Scenario: Search projects by name project
-    Given User is Jira projects page
-    When User enter "Framework-Management-Issue" name project in search field
+  Scenario: PRO_03: Search projects by name project
+    Given User click Projects button in top header
+    When User click View all projects item
+    When User enter "Evizi-Hung-Training" name project in search field
     Then Projects with name in search field displays
