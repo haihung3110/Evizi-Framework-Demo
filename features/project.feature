@@ -9,3 +9,9 @@ Feature: Project
     And User create project with name "Framework-Management-Issue" on project create page
     And User select Create button
     Then New project "Framework-Management-Issue" displays
+
+  Scenario: Search projects by filters
+    Given User is on project was created
+    When Select Projects button in top header
+    And User select view all projects item from drop down menu
+    Then All projects with type "Jira Work Management" displays

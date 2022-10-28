@@ -5,7 +5,6 @@ export class Home {
 
   profileBtn = By.xpath(`//button[@data-testid="nav__profile-menu-trigger"]`);
 
- 
 
   constructor(driver: WebDriver) {
     this.driver = driver;
@@ -18,6 +17,4 @@ export class Home {
   public async isAt() {
     return this.driver.findElement(this.profileBtn).isDisplayed();
   }
-
-  
 }
