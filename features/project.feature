@@ -18,5 +18,5 @@ Feature: Project
 
   Scenario: Search projects by name project
     Given User is Jira projects page
-    When User enter name project in search field
+    When User enter "Framework-Management-Issue" name project in search field
     Then Projects with name in search field displays
