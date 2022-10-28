@@ -1,9 +1,9 @@
-import { Given, When, Then, Before, World, BeforeAll } from "cucumber";
+import { Given, When, Before, World, BeforeAll } from "cucumber";
 import { Builder, WebDriver } from "selenium-webdriver";
 import { Constants } from "../common/constants";
 import { stepTimeOut } from "../common/timeouts";
-import { Login } from "../page/login";
-import { Projects } from "../page/projects";
+import { Login } from "../page/login.page";
+import { Projects } from "../page/projects.page";
 
 require("chromedriver");
 
@@ -25,27 +25,25 @@ Before(async function (this: World) {
 });
 
 Given(/^User is on start page/, async function (this: World) {
-  return;
+  project = new Projects(driver);
 });
 
-When(/^User click Jira Work Management$/, async function (this: World) {
-  project = new Projects(driver);
+When(/^User open Jira Work Management$/, async function (this: World) {
   await project.clickJiraWorkManagement();
+  await driver.sleep(5000);
 });
 
 When(
-  /^User click Projects button in top header$/,
+  /^User select Projects button in top header$/,
   async function (this: World) {
-    project = new Projects(driver);
     await project.clickProjectTopHead();
   }
 );
 
 When(
-  /^User click Create project in drop down menu$/,
+  /^User select Create project in drop down menu$/,
   async function (this: World) {
-    project = new Projects(driver);
     await project.clickCreateProject();
-    await driver.sleep(10000);
+    await driver.sleep(5000);
   }
 );
