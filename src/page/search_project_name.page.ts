@@ -11,9 +11,9 @@ export class SearchProjectsByNamePage {
 
   searchField = By.xpath(`//input[@name='search']`);
 
-  isProjectsDisplayed = By.xpath(
-    `//tr[td[.='']]//div[.='Evizi-Hung-Training']`
-  );
+
+  isProjectsDisplayed = By.xpath(`//tr[td[.='']]//div[.='Evizi-Hung-Training']`);
+
 
   //implement method for SearchProjectsByName
 
