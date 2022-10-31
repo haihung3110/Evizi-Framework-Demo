@@ -1,4 +1,4 @@
-import { SearchProjectByFilterPage } from "../page/search_project_filter.page";
+import { SearchProjectByFilterPage } from "../page/list_project_filter.page";
 import { assert } from "chai";
 import { Given, When, Then, World } from "cucumber";
 import { WebDriver } from "selenium-webdriver";
