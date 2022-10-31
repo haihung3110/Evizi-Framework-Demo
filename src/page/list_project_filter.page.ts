@@ -1,10 +1,9 @@
 import { By, WebDriver } from "selenium-webdriver";
+import { SeleniumWebdriverWrapper } from "../common/seleniumWebdriverWrapper";
 
-export class SearchProjectByFilterPage {
-  driver: WebDriver;
-
+export class SearchProjectByFilterPage extends SeleniumWebdriverWrapper {
   constructor(driver: WebDriver) {
-    this.driver = driver;
+    super(driver);
   }
   // element for SearchProjectByFilterPage
   projectsTopHeadBtn = By.xpath(`//button[.='Projects']`);
@@ -22,10 +21,6 @@ export class SearchProjectByFilterPage {
   filterLabel = By.xpath(`//div[text()='Jira Work Management']`);
 
   // method for search project by filter
-
-  public async isCurrentProjectCreated() {
-    await this.driver.findElement(this.projectNameLabel).isDisplayed();
-  }
 
   public async clickProjectsTopHead() {
     await this.driver.findElement(this.projectsTopHeadBtn).click();

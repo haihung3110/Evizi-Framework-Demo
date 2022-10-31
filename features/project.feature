@@ -12,13 +12,7 @@ Feature: Project
 
   Scenario: PRO_02: List projects by filters
     Given User click Project button in top header
-    When User click View all projects item
+    When User click View all projects items
     And User select All Jira Product field
     And User select item "Jira Work Management"
     Then All projects with type "Jira Work Management" displays
-
-  Scenario: PRO_03: Search projects by name project
-    Given User click Projects button in top header
-    When User click View all projects item
-    When User enter "Evizi-Hung-Training" name project in search field
-    Then Projects with name in search field displays

@@ -9,7 +9,7 @@ import {
 } from "selenium-webdriver";
 
 export class SeleniumWebdriverWrapper {
-  constructor(private readonly driver: WebDriver) {}
+  constructor(protected readonly driver: WebDriver) {}
 
   waitUntilElementLoadedAndDisplayed = async (
     locator: Locator
