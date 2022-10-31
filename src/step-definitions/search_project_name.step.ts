@@ -1,11 +1,16 @@
 import { Given, When, Then } from "cucumber";
 import { SearchProjectsByNamePage } from "../page/search_project_name.page";
-
+import assert = require("assert");
 require("chromedriver");
 
 let searchProjectsByName: SearchProjectsByNamePage;
 
-Given(/^User is Jira projects page/, async function () {
+Given(/^User click Projects button in top header/, async function () {
+  searchProjectsByName = new SearchProjectsByNamePage(this.driver);
+  await searchProjectsByName.isCurrentProjectPage();
+});
+
+When(/^User click View all projects item/, async function () {
   searchProjectsByName = new SearchProjectsByNamePage(this.driver);
   await searchProjectsByName.isCurrentProjectPage();
 });
@@ -22,7 +27,10 @@ When(
 Then(
   /^Projects with name in search field displays/,
   async function (nameProjectInSearchField: string) {
-    searchProjectsByName = new SearchProjectsByNamePage(this.driver);
-    await searchProjectsByName.isProjectNameDisplayed(nameProjectInSearchField);
+    let projectTemplate = new SearchProjectsByNamePage(this.driver);
+    let isOnProjectPageCreate = await projectTemplate.isProjectNameDisplayed(
+      nameProjectInSearchField
+    );
+    assert.equal(isOnProjectPageCreate, true);
   }
 );
