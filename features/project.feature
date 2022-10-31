@@ -1,6 +1,8 @@
 Feature: Project
+  Verify that user can perform
+  the functions of the project module
 
-  Scenario: Create new project
+  Scenario: PRO_01: Create new project
     Given User is on start page
     When User open Jira Work Management
     And User select Projects button in top header
