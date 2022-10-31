@@ -24,8 +24,3 @@ Feature: Project
     When User click View all projects item
     When User enter "Evizi-Hung-Training" name project in search field
     Then Projects with name in search field displays
-
-  # Scenario: PRO_04: Delete project
-  # Given 
-
-  # Scenario: PRO_05: Update project
