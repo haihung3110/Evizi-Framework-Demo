@@ -1,21 +1,20 @@
+import { By, WebDriver } from "selenium-webdriver";
+import { SeleniumWebdriverWrapper } from "../common/seleniumWebdriverWrapper";
 
- import { By, WebDriver } from "selenium-webdriver";
-
-
-export class SearchProjectByFilterPage {
-  driver: WebDriver;
-
+export class SearchProjectByFilterPage extends SeleniumWebdriverWrapper {
   constructor(driver: WebDriver) {
-    this.driver = driver;
+    super(driver);
   }
   // element for SearchProjectByFilterPage
   projectsTopHeadBtn = By.xpath(`//button[.='Projects']`);
 
-  viewAllProjectsPageBtn = By.xpath(`//a[.='View all projects']`);
+  viewAllProjectsPageBtn = By.xpath(
+    `//div[@role='group']//a[@href='/jira/projects']`
+  );
 
   filterProjects = By.xpath(`//div[text()='All Jira products']`);
 
-  itemFromFilter = By.xpath(`//div[@id='react-select-17-option-3']`);
+  itemFromFilter = By.xpath(`//div[text()='Jira Work Management']`);
 
   projectNameLabel = By.xpath(
     `//nav[@aria-label='Breadcrumbs']//following::li//span`
@@ -24,10 +23,6 @@ export class SearchProjectByFilterPage {
   filterLabel = By.xpath(`//div[text()='Jira Work Management']`);
 
   // method for search project by filter
-
-  public async isCurrentProjectCreated() {
-    await this.driver.findElement(this.projectNameLabel).isDisplayed();
-  }
 
   public async clickProjectsTopHead() {
     await this.driver.findElement(this.projectsTopHeadBtn).click();

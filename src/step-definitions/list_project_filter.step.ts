@@ -1,40 +1,44 @@
+import assert from "assert";
+import { Given, When, Then, World } from "cucumber";
 
 import { SearchProjectByFilterPage } from "../page/list_project_filter.page";
-import { assert } from "chai";
-import { Given, When, Then, World } from "cucumber";
-import { WebDriver } from "selenium-webdriver";
-
 
 require("chromedriver");
 
-let searchProjectsByFilter: SearchProjectByFilterPage;
+let ListProjectByFilter: SearchProjectByFilterPage;
 
 //define step for SearchProjectByFilterStep
 
-Given(/^User is on project was created/, async function (this: World) {
-  searchProjectsByFilter = new SearchProjectByFilterPage(this.driver);
-  await searchProjectsByFilter.isCurrentProjectCreated();
+Given(/^User click Project button in top header/, async function (this: World) {
+  ListProjectByFilter = new SearchProjectByFilterPage(this.driver);
+  await ListProjectByFilter.clickProjectsTopHead();
 });
 
-When(/^Select Projects button in top header/, async function (this: World) {
-  searchProjectsByFilter = new SearchProjectByFilterPage(this.driver);
-  await searchProjectsByFilter.clickProjectsTopHead();
+When(/^User select View all projects items/, async function (this: World) {
+  ListProjectByFilter = new SearchProjectByFilterPage(this.driver);
+  await ListProjectByFilter.clickViewAllProjectBtn();
+  // await ListProjectByFilter.waitUntilPageElementsLoadedAndDisplayed(
+  //   this.filterProjects
+  // );
   await this.driver.sleep(3000);
 });
 
-When(
-  /^User select view all projects item from drop down menu/,
-  async function (this: World) {
-    searchProjectsByFilter = new SearchProjectByFilterPage(this.driver);
-    await searchProjectsByFilter.clickViewAllProjectBtn();
-    await this.driver.sleep(5000);
-  }
-);
+When(/^User select All Jira Product field/, async function (this: World) {
+  ListProjectByFilter = new SearchProjectByFilterPage(this.driver);
+  await ListProjectByFilter.openFilterProjectsItems();
+  await this.driver.sleep(3000);
+});
+
+When(/^User select item "Jira Work Management"/, async function (this: World) {
+  ListProjectByFilter = new SearchProjectByFilterPage(this.driver);
+  await ListProjectByFilter.selectItemFormFilter();
+});
 
 Then(
   /^All projects with type "Jira Work Management" displays/,
   async function (this: World) {
-    searchProjectsByFilter = new SearchProjectByFilterPage(this.driver);
-    await searchProjectsByFilter.isDisplayProjectsByFilter();
+    ListProjectByFilter = new SearchProjectByFilterPage(this.driver);
+    await ListProjectByFilter.isDisplayProjectsByFilter();
+    await this.driver.sleep(3000);
   }
 );
