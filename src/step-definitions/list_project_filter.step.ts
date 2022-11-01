@@ -17,9 +17,6 @@ Given(/^User click Project button in top header/, async function (this: World) {
 When(/^User select View all projects items/, async function (this: World) {
   ListProjectByFilter = new SearchProjectByFilterPage(this.driver);
   await ListProjectByFilter.clickViewAllProjectBtn();
-  // await ListProjectByFilter.waitUntilPageElementsLoadedAndDisplayed(
-  //   this.filterProjects
-  // );
   await this.driver.sleep(3000);
 });
 
@@ -32,6 +29,7 @@ When(/^User select All Jira Product field/, async function (this: World) {
 When(/^User select item "Jira Work Management"/, async function (this: World) {
   ListProjectByFilter = new SearchProjectByFilterPage(this.driver);
   await ListProjectByFilter.selectItemFormFilter();
+  await this.driver.sleep(3000);
 });
 
 Then(
@@ -39,6 +37,5 @@ Then(
   async function (this: World) {
     ListProjectByFilter = new SearchProjectByFilterPage(this.driver);
     await ListProjectByFilter.isDisplayProjectsByFilter();
-    await this.driver.sleep(3000);
   }
 );
