@@ -14,7 +14,7 @@ Feature: Project
 
   Scenario: PRO_02: List projects by filters
     Given User click Project button in top header
-    When User click View all projects item
+    When User select View all projects items
     And User select All Jira Product field
     And User select item "Jira Work Management"
     Then All projects with type "Jira Work Management" displays
@@ -24,3 +24,10 @@ Feature: Project
     When User click View all projects item
     When User enter "Evizi-Hung-Training" name project in search field
     Then Projects with name in search field displays
+
+  Scenario: PRO_04: User delete projects
+    Given User click Projects button in top header
+    When User select "View All Projects"
+    And User click More button
+    And User click "Move to trash"
+    Then Message box display successfully
