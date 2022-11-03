@@ -6,7 +6,7 @@ export class SearchProjectsByNamePage extends SeleniumWebdriverWrapper {
     super(driver);
   }
 
-  //implement for locator for SearchProjectsByName
+  //implement locator for SearchProjectsByName
 
   projectsTopHeadBtn = By.xpath(`//button[.='Projects']`);
 
