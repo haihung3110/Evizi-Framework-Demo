@@ -1,6 +1,4 @@
-import assert from "assert";
 import { Given, When, Then, World } from "cucumber";
-
 import { SearchProjectByFilterPage } from "../page/list_project_filter.page";
 
 require("chromedriver");
