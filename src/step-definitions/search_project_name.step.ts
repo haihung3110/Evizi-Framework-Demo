@@ -1,12 +1,10 @@
 import { Given, When, Then, World } from "cucumber";
 import { SearchProjectsByNamePage } from "../page/search_project_name.page";
-import assert from "assert";
-require("chromedriver");
 
 let searchProjectsByName: SearchProjectsByNamePage;
 
 Given(
-  /^User click Projects button in top header/,
+  /^User click Projects button in top header after list project by filter/,
   async function (this: World) {
     searchProjectsByName = new SearchProjectsByNamePage(this.driver);
     await searchProjectsByName.clickProjectsTopHead();

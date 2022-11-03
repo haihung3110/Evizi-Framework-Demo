@@ -19,6 +19,10 @@ export class DeleteProjectPage extends SeleniumWebdriverWrapper {
     `//tr[contains(.,'TICKET')]//span[@role='img']//ancestor::button`
   );
 
+  messageBox = By.xpath(
+    `//div[@data-testid='project-soft-delete-modal.ui.flags.moved-to-trash-success']`
+  );
+
   //implement method for DeleteProjectPage
 
   public async clickProjectsTopHead() {
@@ -35,5 +39,9 @@ export class DeleteProjectPage extends SeleniumWebdriverWrapper {
 
   public async clickMoveToTrashBtn() {
     await this.driver.findElement(this.moveToTrashBtn).click();
+  }
+
+  public async messageBoxDisplays() {
+    await this.driver.findElement(this.messageBox).isDisplayed();
   }
 }

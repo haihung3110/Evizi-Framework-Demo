@@ -20,13 +20,13 @@ Feature: Project
     Then All projects with type "Jira Work Management" displays
 
   Scenario: PRO_03: Search projects by name project
-    Given User click Projects button in top header
+    Given User click Projects button in top header after list project by filter
     When User click View all projects item
     When User enter "Evizi-Hung-Training" name project in search field
     Then Projects with name in search field displays
 
   Scenario: PRO_04: User delete projects
-    Given User click Projects button in top header
+    Given User click Projects button in top header after search by name
     When User select "View All Projects"
     And User click More button
     And User click "Move to trash"
