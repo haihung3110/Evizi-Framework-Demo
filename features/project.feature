@@ -30,4 +30,5 @@ Feature: Project
     When User select "View All Projects"
     And User click More button
     And User click "Move to trash"
+    And User click "Move" button from message box
     Then Message box display successfully

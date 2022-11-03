@@ -16,7 +16,11 @@ export class DeleteProjectPage extends SeleniumWebdriverWrapper {
   moreBtn = By.xpath(`(//tr[td[.='TICKET']]/td)[last()]//button`);
 
   moveToTrashBtn = By.xpath(
-    `//tr[contains(.,'TICKET')]//span[@role='img']//ancestor::button`
+    `//div[@data-test-id="projects-main.content.cells.actions.dropdown-menu-trash"]`
+  );
+
+  moveToTrashBtnFromMessageBox = By.xpath(
+    ` //button[@data-test-id='project-soft-delete-modal.ui.modal-footer.move-to-trash-button-wrapper']`
   );
 
   messageBox = By.xpath(
@@ -39,6 +43,10 @@ export class DeleteProjectPage extends SeleniumWebdriverWrapper {
 
   public async clickMoveToTrashBtn() {
     await this.driver.findElement(this.moveToTrashBtn).click();
+  }
+
+  public async clickMoveToTrashBtnFromMessageBox() {
+    await this.driver.findElement(this.moveToTrashBtnFromMessageBox).click();
   }
 
   public async messageBoxDisplays() {
