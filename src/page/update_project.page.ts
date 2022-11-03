@@ -8,27 +8,39 @@ export class UpdateProjectPage extends SeleniumWebdriverWrapper {
 
   //implement locator for UpdateProjectPage
 
+  jiraWorkManagementBtn = By.xpath(
+    `//button[contains(.,'Jira Work Management') and contains(.,'hungphan-training-fresher')]`
+  );
+
   projectsTopHeadBtn = By.xpath(`//button[.='Projects']`);
 
   viewAllProjectsPageBtn = By.xpath(
     `//div[@role='group']//a[@href='/jira/projects']`
   );
 
-  moreBtn = By.xpath(`(//tr[td[.='TPTT']]/td)[last()]//button`);
+  moreBtnOfTestProjectTaskTrackingProject = By.xpath(
+    `(//tr[td[.='TPTT']]/td)[last()]//button`
+  );
 
   projectSettingsBtn = By.xpath(
     `//a[@href='/jira/core/projects/TPTT/settings']`
   );
 
   assigneeField = By.xpath(
-    `//label[@id='default-assignee-uid37-label']//following-sibling::div`
+    `//label[text()='Default assignee']//following-sibling::div`
   );
 
   itemAssigneeField = By.xpath(`//div[.='Project lead']`);
 
   saveBtn = By.xpath(`//button[.='Save']`);
 
+  messageBoxDisplays = By.xpath(`//div[@role='alert']//span[.='Success!']`);
+
   //implement method for UpdateProjectPage
+
+  public async clickJiraWorkManagement() {
+    await this.driver.findElement(this.jiraWorkManagementBtn).click();
+  }
 
   public async clickProjectsTopHead() {
     await this.driver.findElement(this.projectsTopHeadBtn).click();
@@ -39,7 +51,9 @@ export class UpdateProjectPage extends SeleniumWebdriverWrapper {
   }
 
   public async clickMoreBtn() {
-    await this.driver.findElement(this.moreBtn).click();
+    await this.driver
+      .findElement(this.moreBtnOfTestProjectTaskTrackingProject)
+      .click();
   }
 
   public async clickProjectSettingsBtn() {
@@ -50,5 +64,15 @@ export class UpdateProjectPage extends SeleniumWebdriverWrapper {
     await this.driver.findElement(this.assigneeField).click();
   }
 
-  
+  public async selectItemAssigneeField() {
+    await this.driver.findElement(this.itemAssigneeField).click();
+  }
+
+  public async clickSaveBtn() {
+    await this.driver.findElement(this.saveBtn).click();
+  }
+
+  public async messageBoxUpdateDisplays() {
+    await this.driver.findElement(this.messageBoxDisplays).isDisplayed();
+  }
 }
