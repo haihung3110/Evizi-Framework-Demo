@@ -31,4 +31,14 @@ Feature: Project
     And User click More button
     And User click "Move to trash"
     And User click "Move" button from message box
-    Then Message box display successfully
+    Then Messages box displays "successfully"
+
+  Scenario: PRO_05: User update project
+    Given User click Projects button in top header after delete project
+    When User select "View All Projects"
+    And User click More button
+    And User select "Project setting" for "Test-Project-Task-Tracking" project
+    And User select "Default assignee" field
+    And User select "Project lead"
+    And User click "Save" button
+    Then Message box displays with text "successfully"

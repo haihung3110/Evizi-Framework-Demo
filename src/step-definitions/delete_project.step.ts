@@ -20,13 +20,13 @@ When(/^User select "View All Projects"/, async function (this: World) {
 When(/^User click More button/, async function (this: World) {
   deleteProjectStep = new DeleteProjectPage(this.driver);
   await deleteProjectStep.clickMoreBtn();
-  await this.driver.sleep(5000);
+  await this.driver.sleep(3000);
 });
 
 When(/^User click "Move to trash"/, async function (this: World) {
   deleteProjectStep = new DeleteProjectPage(this.driver);
   await deleteProjectStep.clickMoveToTrashBtn();
-  await this.driver.sleep(4000);
+  await this.driver.sleep(3000);
 });
 
 When(
@@ -34,11 +34,11 @@ When(
   async function (this: World) {
     deleteProjectStep = new DeleteProjectPage(this.driver);
     await deleteProjectStep.clickMoveToTrashBtnFromMessageBox();
-    await this.driver.sleep(4000);
+    await this.driver.sleep(3000);
   }
 );
 
-Then(/^Message box display successfully/, async function (this: World) {
+Then(/^Messages box displays "successfully"/, async function (this: World) {
   deleteProjectStep = new DeleteProjectPage(this.driver);
   await deleteProjectStep.messageBoxDisplays();
 });

@@ -13,7 +13,7 @@ export class DeleteProjectPage extends SeleniumWebdriverWrapper {
     `//div[@role='group']//a[@href='/jira/projects']`
   );
 
-  moreBtn = By.xpath(`(//tr[td[.='TICKET']]/td)[last()]//button`);
+  moreBtn = By.xpath(`(//tr[td[.='BDC']]/td)[last()]//button`);
 
   moveToTrashBtn = By.xpath(
     `//div[@data-test-id="projects-main.content.cells.actions.dropdown-menu-trash"]`
