@@ -1,6 +1,6 @@
 Feature: Project
   Verify that user can perform
-  the functions of the project module
+  the functions of the Project module
 
   Scenario: PRO_01: Create new project
     Given User is on start page
