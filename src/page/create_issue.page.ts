@@ -14,7 +14,9 @@ export class CreateIssuePage extends SeleniumWebdriverWrapper {
 
   nameProjectEviziTrainingManual = By.xpath(`//a[@href="/browse/TICKET"]`);
 
-  createIssueBtnTopHeader = By.xpath(`//button[@id='createGlobalItem']`);
+  createIssueBtnTopHeader = By.xpath(
+    `//button[@id='createGlobalItemIconButton']`
+  );
 
   summaryField = By.xpath(`//input[@name='summary']`);
 
@@ -36,8 +38,8 @@ export class CreateIssuePage extends SeleniumWebdriverWrapper {
     await this.driver.findElement(this.createIssueBtnTopHeader).click();
   }
 
-  public async enterIssueInSummaryField(issue: string) {
-    await this.driver.findElement(this.summaryField).sendKeys(issue);
+  public async enterIssueInSummaryField(issueName: string) {
+    await this.driver.findElement(this.summaryField).sendKeys(issueName);
   }
 
   public async clickCreateBtn() {
