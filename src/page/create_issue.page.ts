@@ -24,6 +24,8 @@ export class CreateIssuePage extends SeleniumWebdriverWrapper {
     `//button[@data-testid='issue-create.common.ui.footer.create-button']`
   );
 
+  messageBoxIssueCreate = By.xpath(`//span[starts-with(.,"You've created")]`);
+
   // method for CreateIssuePage
 
   public async clickJiraWorkManagement() {
@@ -44,5 +46,9 @@ export class CreateIssuePage extends SeleniumWebdriverWrapper {
 
   public async clickCreateBtn() {
     await this.driver.findElement(this.createBtn).click();
+  }
+
+  public async messageBoxNewIssueCreateDisplays() {
+    await this.driver.findElement(this.messageBoxIssueCreate).isDisplayed();
   }
 }

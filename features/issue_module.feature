@@ -8,4 +8,4 @@ Feature: Issue
     And User select Create button in top header
     And User enter new Issue "Issue-01" in Summary field
     And User click button Create
-    # Then New Issue is created
+    Then New Issue is created and message box displays

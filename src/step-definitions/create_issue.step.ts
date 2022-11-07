@@ -42,4 +42,10 @@ When(/^User click button Create/, async function (this: World) {
   await this.driver.sleep(3000);
 });
 
-// Then(/^New Issue is created/, async function (this: World) {});
+Then(
+  /^New Issue is created and message box displays/,
+  async function (this: World) {
+    createIssuePage = new CreateIssuePage(this.driver);
+    await createIssuePage.messageBoxNewIssueCreateDisplays();
+  }
+);
