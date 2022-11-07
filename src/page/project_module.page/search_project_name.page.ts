@@ -1,5 +1,5 @@
 import { WebDriver, By } from "selenium-webdriver";
-import { SeleniumWebdriverWrapper } from "../common/seleniumWebdriverWrapper";
+import { SeleniumWebdriverWrapper } from "../../common/seleniumWebdriverWrapper";
 
 export class SearchProjectsByNamePage extends SeleniumWebdriverWrapper {
   constructor(driver: WebDriver) {

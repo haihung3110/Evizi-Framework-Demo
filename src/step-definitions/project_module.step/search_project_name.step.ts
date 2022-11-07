@@ -1,5 +1,5 @@
 import { Given, When, Then, World } from "cucumber";
-import { SearchProjectsByNamePage } from "../page/search_project_name.page";
+import { SearchProjectsByNamePage } from "../../page//project_module.page/search_project_name.page";
 
 let searchProjectsByName: SearchProjectsByNamePage;
 

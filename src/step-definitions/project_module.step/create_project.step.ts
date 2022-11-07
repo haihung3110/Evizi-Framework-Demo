@@ -1,9 +1,9 @@
 import { Given, When, Before, World, BeforeAll } from "cucumber";
 import { Builder, WebDriver } from "selenium-webdriver";
-import { Constants } from "../common/constants";
-import { stepTimeOut } from "../common/timeouts";
-import { Login } from "../page/login.page";
-import { Projects } from "../page/projects.page";
+import { Constants } from "../../common/constants";
+import { stepTimeOut } from "../../common/timeouts";
+import { Login } from "../../page/project_module.page/login.page";
+import { Projects } from "../../page/project_module.page/projects.page";
 
 require("chromedriver");
 

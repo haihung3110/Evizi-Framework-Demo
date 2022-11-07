@@ -1,5 +1,5 @@
 import { Given, When, Then, World } from "cucumber";
-import { DeleteProjectPage } from "../page/delete_project.page";
+import { DeleteProjectPage } from "../../page/project_module.page/delete_project.page";
 
 let deleteProjectStep: DeleteProjectPage;
 

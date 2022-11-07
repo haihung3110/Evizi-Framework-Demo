@@ -1,5 +1,5 @@
 import { Given, When, Then, World } from "cucumber";
-import { CreateIssuePage } from "../page/create_issue.page";
+import { CreateIssuePage } from "../../page/issue_module.page/create_issue.page";
 
 let createIssuePage: CreateIssuePage;
 

@@ -48,6 +48,7 @@ export class SeleniumWebdriverWrapper {
       elementWaitTimeOutValue,
       `Element not invisible: ${JSON.stringify(locator)}`
     );
+
   scrollElementToView = async (element: WebElement) =>
     await this.driver.executeScript(
       "arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 4);",
