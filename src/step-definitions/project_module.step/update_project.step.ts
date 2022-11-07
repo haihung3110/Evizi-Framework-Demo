@@ -1,5 +1,5 @@
 import { Given, When, Then, World } from "cucumber";
-import { UpdateProjectPage } from "../page/update_project.page";
+import { UpdateProjectPage } from "../../page/project_module.page/update_project.page";
 
 let updateProjectStep: UpdateProjectPage;
 

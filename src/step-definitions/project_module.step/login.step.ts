@@ -1,7 +1,7 @@
 import { Given, When, Then } from "cucumber";
 import { Builder, WebDriver } from "selenium-webdriver";
-import { Login } from "../page/login.page";
-import { Home } from "../page/home.page";
+import { Login } from "../../page/project_module.page/login.page";
+import { Home } from "../../page/project_module.page/home.page";
 import assert from "assert";
 require("chromedriver");
 
