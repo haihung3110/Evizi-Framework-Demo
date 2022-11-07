@@ -5,7 +5,7 @@ export class SearchProjectByFilterPage extends SeleniumWebdriverWrapper {
   constructor(driver: WebDriver) {
     super(driver);
   }
-  // element for SearchProjectByFilterPage
+  // locator for SearchProjectByFilterPage
   projectsTopHeadBtn = By.xpath(`//button[.='Projects']`);
 
   viewAllProjectsPageBtn = By.xpath(
