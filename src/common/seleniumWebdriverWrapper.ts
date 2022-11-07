@@ -54,4 +54,14 @@ export class SeleniumWebdriverWrapper {
       "arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 4);",
       element
     );
+
+  clearFormField = async (locator: Locator) => {
+    const element = await this.driver.findElement(locator);
+    const text = await element.getAttribute("value");
+    const textLength = text.length;
+
+    for (let i = 0; i < textLength; i++) {
+      await element.sendKeys(Key.BACK_SPACE);
+    }
+  };
 }
