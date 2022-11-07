@@ -9,3 +9,7 @@ Feature: Issue
     And User enter new Issue "Issue-01" in Summary field
     And User click button Create
     Then New Issue is created and message box displays
+
+Scenario: ISS-02: Delete issue
+Given User click issue with name "Issue-01"
+When 
