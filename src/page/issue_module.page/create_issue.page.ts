@@ -12,7 +12,7 @@ export class CreateIssuePage extends SeleniumWebdriverWrapper {
     `//button[contains(.,'Jira Work Management') and contains(.,'hungphan-training-fresher')]`
   );
 
-  nameProjectEviziTrainingManual = By.xpath(`//a[@href="/browse/TICKET"]`);
+  projectEviziTrainingManual = By.xpath(`//a[@href="/browse/TICKET"]`);
 
   createIssueBtnTopHeader = By.xpath(
     `//button[@id='createGlobalItemIconButton']`
@@ -33,7 +33,7 @@ export class CreateIssuePage extends SeleniumWebdriverWrapper {
   }
 
   public async clickProjectExist() {
-    await this.driver.findElement(this.nameProjectEviziTrainingManual).click();
+    await this.driver.findElement(this.projectEviziTrainingManual).click();
   }
 
   public async clickCreateBtnTopHeader() {
