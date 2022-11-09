@@ -9,6 +9,7 @@ import {
 import { elementWaitTimeOutValue } from "../common/timeouts";
 
 export class SeleniumWebdriverWrapper {
+  static waitUntilPageElementsLoadedAndDisplayed: any;
   constructor(protected readonly driver: WebDriver) {}
 
   public async waitUntilElementLoadedAndDisplayed(
@@ -63,5 +64,9 @@ export class SeleniumWebdriverWrapper {
     for (let i = 0; i < textLength; i++) {
       await element.sendKeys(Key.BACK_SPACE);
     }
+  };
+
+  maximizeWindow = async () => {
+    await this.driver.manage().window().maximize();
   };
 }

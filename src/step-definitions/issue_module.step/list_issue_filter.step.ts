@@ -1,9 +1,7 @@
 import { Given, When, Then, World } from "cucumber";
 import { ListIssueFilterPage } from "../../page/issue_module.page/list_issue_filter.page";
-import { SeleniumWebdriverWrapper } from "../../common/seleniumWebdriverWrapper";
 
 let listIssueFilter: ListIssueFilterPage;
-let seleniumWebdriverWrapper: SeleniumWebdriverWrapper;
 
 Given(
   /^User click Jira WorK Management in TC Search Issue/,
