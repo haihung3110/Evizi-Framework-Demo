@@ -39,6 +39,6 @@ export class SearchIssueByName extends SeleniumWebdriverWrapper {
   }
 
   public async isIssueNameDisplayed() {
-    await this.driver.findElement(this.isIssueNameDisplays).isDisplayed();
+    return this.driver.findElement(this.isIssueNameDisplays).isDisplayed();
   }
 }

@@ -1,3 +1,4 @@
+import assert from "assert";
 import { Given, When, Then, World } from "cucumber";
 import { SearchIssueByName } from "../../page/issue_module.page/search_issue_by_name.page";
 
@@ -33,8 +34,9 @@ When(
   }
 );
 
-Then(/^Issue with name is displays/, async function (this: World) {
-  searchIssueByName = new SearchIssueByName(this.driver);
-  await searchIssueByName.isIssueNameDisplayed();
-  await this.driver.sleep(3000);
+Then(/^Issue with name is displays/, async function () {
+  let searchIssueByName = new SearchIssueByName(this.driver);
+  let isSearchIssueByNameDisplays =
+    await searchIssueByName.isIssueNameDisplayed();
+  assert.equal(isSearchIssueByNameDisplays, true);
 });

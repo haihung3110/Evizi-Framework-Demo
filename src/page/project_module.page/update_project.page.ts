@@ -73,6 +73,6 @@ export class UpdateProjectPage extends SeleniumWebdriverWrapper {
   }
 
   public async messageBoxUpdateDisplays() {
-    await this.driver.findElement(this.messageBoxDisplays).isDisplayed();
+    return this.driver.findElement(this.messageBoxDisplays).isDisplayed();
   }
 }

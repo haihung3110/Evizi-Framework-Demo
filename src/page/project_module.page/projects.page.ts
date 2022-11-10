@@ -24,6 +24,6 @@ export class Projects {
   }
 
   public async clickCreateProject() {
-    await this.driver.findElement(this.createProjectsBtn).click();
+    return this.driver.findElement(this.createProjectsBtn).click();
   }
 }

@@ -35,6 +35,6 @@ export class SearchProjectsByNamePage extends SeleniumWebdriverWrapper {
   }
 
   public async isProjectNameDisplayed() {
-    await this.driver.findElement(this.isProjectsDisplayed).isDisplayed()
+    return this.driver.findElement(this.isProjectsDisplayed).isDisplayed();
   }
 }

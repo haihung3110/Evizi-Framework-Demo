@@ -49,6 +49,6 @@ export class CreateIssuePage extends SeleniumWebdriverWrapper {
   }
 
   public async messageBoxNewIssueCreateDisplays() {
-    await this.driver.findElement(this.messageBoxIssueCreate).isDisplayed();
+    return this.driver.findElement(this.messageBoxIssueCreate).isDisplayed();
   }
 }

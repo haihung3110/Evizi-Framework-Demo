@@ -43,6 +43,6 @@ export class DeleteIssuePage extends SeleniumWebdriverWrapper {
   }
 
   public async messageBoxDeleteIssueDisplays() {
-    await this.driver.findElement(this.messageBoxIsDeleteDisplay).isDisplayed();
+    return this.driver.findElement(this.messageBoxIsDeleteDisplay).isDisplayed();
   }
 }

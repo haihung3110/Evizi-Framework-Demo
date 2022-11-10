@@ -49,6 +49,6 @@ export class ListIssueFilterPage extends SeleniumWebdriverWrapper {
   }
 
   public async isTaskFilterDisplays() {
-    await this.driver.findElement(this.taskFilterDisplays).isDisplayed();
+    return this.driver.findElement(this.taskFilterDisplays).isDisplayed();
   }
 }
