@@ -59,6 +59,6 @@ export class AddCommentPage extends SeleniumWebdriverWrapper {
   }
 
   public async isCommentDisplay() {
-    await this.driver.findElement(this.commentIsDisplays).isDisplayed();
+    return this.driver.findElement(this.commentIsDisplays).isDisplayed();
   }
 }

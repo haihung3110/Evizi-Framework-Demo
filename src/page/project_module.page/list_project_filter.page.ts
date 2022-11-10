@@ -41,6 +41,6 @@ export class SearchProjectByFilterPage extends SeleniumWebdriverWrapper {
   }
 
   public async isDisplayProjectsByFilter() {
-    await this.driver.findElement(this.filterLabel).isDisplayed();
+    return this.driver.findElement(this.filterLabel).isDisplayed();
   }
 }

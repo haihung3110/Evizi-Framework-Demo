@@ -50,6 +50,6 @@ export class DeleteProjectPage extends SeleniumWebdriverWrapper {
   }
 
   public async messageBoxDisplays() {
-    await this.driver.findElement(this.messageBox).isDisplayed();
+    return this.driver.findElement(this.messageBox).isDisplayed();
   }
 }

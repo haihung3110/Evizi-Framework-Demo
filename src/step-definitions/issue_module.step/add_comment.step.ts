@@ -1,3 +1,4 @@
+import assert from "assert";
 import { Given, When, Then, World } from "cucumber";
 import { AddCommentPage } from "../../page/issue_module.page/add_comment.page";
 
@@ -53,6 +54,6 @@ When(/^User select "Save" button/, async function (this: World) {
 
 Then(/^Comment has displays/, async function (this: World) {
   addCommentPage = new AddCommentPage(this.driver);
-  await addCommentPage.isCommentDisplay();
-  await this.driver.sleep(2000);
+  let isAddCommentPageDisplays = await addCommentPage.isCommentDisplay();
+  assert.equal(isAddCommentPageDisplays, true);
 });
