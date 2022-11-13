@@ -11,9 +11,10 @@ Given(
   async function (this: World) {
     searchIssueByName = new SearchIssueByName(this.driver);
     await searchIssueByName.clickJiraWorkManagement();
-    await driverWrapper.waitUntilElementLoadedAndDisplayed(
-      searchIssueByName.clickJiraWorkManagement
-    );
+    await this.driver.sleep(3000);
+    // await driverWrapper.waitUntilElementLoadedAndDisplayed(
+    //   searchIssueByName.clickJiraWorkManagement
+    // );
   }
 );
 
