@@ -1,5 +1,6 @@
 import { Given, When, Then, World } from "cucumber";
 import { UpdateProjectPage } from "../../page/project_module.page/update_project.page";
+import assert from 'assert';
 
 let updateProjectStep: UpdateProjectPage;
 
@@ -67,6 +68,7 @@ Then(
   /^Message box displays with text "successfully"/,
   async function (this: World) {
     updateProjectStep = new UpdateProjectPage(this.driver);
-    await updateProjectStep.messageBoxUpdateDisplays();
+    let isUpdateProjectDisplay = await updateProjectStep.messageBoxUpdateDisplays();
+    assert.equal(isUpdateProjectDisplay, true)
   }
 );

@@ -2,7 +2,7 @@
 #   Verify that user can perform
 #   the functions of the Project module
 
-#   Scenario: PRO_01: Create new project
+#   Scenario Outline: PRO_01: Create new project
 #     Given User is on start page
 #     When User open Jira Work Management
 #     And User select Projects button in top header

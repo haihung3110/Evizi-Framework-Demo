@@ -1,6 +1,6 @@
+import assert from "assert";
 import { When, Then, World } from "cucumber";
 import { ProjectTemplatesPage } from "../../page/project_module.page/projects_template.page";
-import { assert } from "chai";
 
 require("chromedriver");
 
@@ -30,9 +30,8 @@ When(/^User select Create button$/, async function (this: World) {
 Then(
   /^New project "Framework-Management-Issue" displays$/,
   async function (this: World) {
-    let projectTemplate = new ProjectTemplatesPage(this.driver);
+    projectTemplate = new ProjectTemplatesPage(this.driver);
     let isOnProjectPageCreate = await projectTemplate.isAtNewProjectDisplay();
     assert.equal(isOnProjectPageCreate, true);
-    await this.driver.sleep(5000);
   }
 );

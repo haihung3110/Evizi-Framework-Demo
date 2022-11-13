@@ -26,19 +26,19 @@ Feature: Issue
   #   And User select "Task" issue type
   #   Then Issue with type "Task" displays
 
-  # Scenario: ISS-04: search issue by name
-  #   Given User click Jira WorK Management in TC search Issue by name
-  #   When User select existing project
-  #   And User select tab Issue in left navigator
-  #   And User enter issue with name "ISS-04: Improve Code" in search field
-  #   Then Issue with name is displays
+  Scenario: ISS-04: search issue by name
+    Given User click Jira WorK Management in TC search Issue by name
+    # When User select existing project
+    # And User select tab Issue in left navigator
+    # And User enter issue with name "ISS-04: Improve Code" in search field
+    # Then Issue with name is displays
 
-  Scenario: ISS-05: add comment
-    Given User click Jira WorK Management in TC add comment
-    When User select exist project
-    And User select Issue tab in left navigatior
-    And User select Issue with name "ISS-04"
-    And User click "Add comment" field
-    And User enter comment with content "test enter comment"
-    And User select "Save" button
-    Then Comment has displays
+  # Scenario: ISS-05: add comment
+  #   Given User click Jira WorK Management in TC add comment
+  #   When User select exist project
+  #   And User select Issue tab in left navigatior
+  #   And User select Issue with name "ISS-04"
+  #   And User click "Add comment" field
+  #   And User enter comment with content "test enter comment"
+  #   And User select "Save" button
+  #   Then Comment has displays
