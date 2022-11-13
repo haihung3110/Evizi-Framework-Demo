@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js -p default",
-    "cucumber": "./node_modules/.bin/cucumber.js --tags @smoke and @fast"
+    "test": "cucumber-js -p default ./node_modules/.bin/cucumber.js"
   },
   "keywords": [],
   "author": "",

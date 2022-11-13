@@ -1,3 +1,4 @@
+import assert from "assert";
 import { Given, When, Then, World } from "cucumber";
 import { SearchProjectsByNamePage } from "../../page//project_module.page/search_project_name.page";
 
@@ -31,6 +32,8 @@ Then(
   /^Projects with name in search field displays/,
   async function (this: World) {
     searchProjectsByName = new SearchProjectsByNamePage(this.driver);
-    await searchProjectsByName.isProjectNameDisplayed();
+    let isSearchProjectByNameDisplay =
+      await searchProjectsByName.isProjectNameDisplayed();
+    assert.equal(isSearchProjectByNameDisplay, true);
   }
 );

@@ -30,7 +30,7 @@ Given(/^User is on start page/, async function (this: World) {
 
 When(/^User open Jira Work Management$/, async function (this: World) {
   await project.clickJiraWorkManagement();
-  await driver.sleep(5000);
+  await driver.sleep(3000);
 });
 
 When(
@@ -44,6 +44,7 @@ When(
   /^User select Create project in drop down menu$/,
   async function (this: World) {
     await project.clickCreateProject();
-    await driver.sleep(5000);
+    
+    await driver.sleep(3000);
   }
 );
