@@ -1,15 +1,19 @@
 import assert from "assert";
 import { Given, When, Then, World } from "cucumber";
+import { SeleniumWebdriverWrapper } from "../../common/seleniumWebdriverWrapper";
 import { SearchIssueByName } from "../../page/issue_module.page/search_issue_by_name.page";
 
 let searchIssueByName: SearchIssueByName;
+let driverWrapper: SeleniumWebdriverWrapper;
 
 Given(
   /^User click Jira WorK Management in TC search Issue by name/,
   async function (this: World) {
     searchIssueByName = new SearchIssueByName(this.driver);
     await searchIssueByName.clickJiraWorkManagement();
-    await this.driver.sleep(3000);
+    await driverWrapper.waitUntilElementLoadedAndDisplayed(
+      searchIssueByName.clickJiraWorkManagement
+    );
   }
 );
 

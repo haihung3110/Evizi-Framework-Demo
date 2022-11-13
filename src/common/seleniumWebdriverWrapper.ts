@@ -69,4 +69,7 @@ export class SeleniumWebdriverWrapper {
   maximizeWindow = async () => {
     await this.driver.manage().window().maximize();
   };
+
+  click = async (locator: Locator) =>
+    await this.driver.findElement(locator).click();
 }

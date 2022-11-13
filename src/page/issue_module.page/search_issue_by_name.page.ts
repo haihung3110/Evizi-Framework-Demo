@@ -1,4 +1,4 @@
-import { By, WebDriver } from "selenium-webdriver";
+import { By, ByHash, WebDriver } from "selenium-webdriver";
 import { SeleniumWebdriverWrapper } from "../../common/seleniumWebdriverWrapper";
 
 export class SearchIssueByName extends SeleniumWebdriverWrapper {
@@ -8,9 +8,9 @@ export class SearchIssueByName extends SeleniumWebdriverWrapper {
 
   // locator for SearchIssueByName
 
-  jiraWorkManagementBtn = By.xpath(
-    `//button[contains(.,'Jira Work Management') and contains(.,'hungphan-training-fresher')]`
-  );
+  jiraWorkManagementBtn: ByHash = {
+    xpath: `//button[contains(.,'Jira Work Management') and contains(.,'hungphan-training-fresher')]`,
+  };
 
   projectEviziTrainingManual = By.xpath(`//a[@href="/browse/TICKET"]`);
 
@@ -22,9 +22,9 @@ export class SearchIssueByName extends SeleniumWebdriverWrapper {
 
   // method for SearchIssueByName
 
-  public async clickJiraWorkManagement() {
-    await this.driver.findElement(this.jiraWorkManagementBtn).click();
-  }
+  clickJiraWorkManagement = async () => {
+    await this.click(this.jiraWorkManagementBtn);
+  };
 
   public async clickProjectExist() {
     await this.driver.findElement(this.projectEviziTrainingManual).click();
