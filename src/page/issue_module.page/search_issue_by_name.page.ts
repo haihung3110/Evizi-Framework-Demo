@@ -14,7 +14,9 @@ export class SearchIssueByName extends SeleniumWebdriverWrapper {
 
   projectEviziTrainingManual = By.xpath(`//a[@href="/browse/TICKET"]`);
 
-  issuesLeftNavigator = By.xpath(`//a[.="Issues"]`);
+  issueLeftNavigator = By.xpath(
+    `//a[@href="/jira/core/projects/TICKET/issues"]`
+  );
 
   searchField = By.xpath(`//input[@data-test-id="searchfield"]`);
 
@@ -31,7 +33,7 @@ export class SearchIssueByName extends SeleniumWebdriverWrapper {
   }
 
   public async clickIssuesItemLeftNavi() {
-    await this.driver.findElement(this.issuesLeftNavigator).click();
+    await this.driver.findElement(this.issueLeftNavigator).click();
   }
 
   public async enterNameIssue(issueName: string) {
