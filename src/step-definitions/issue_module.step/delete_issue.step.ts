@@ -1,3 +1,4 @@
+import assert from "assert";
 import { Given, When, Then, World } from "cucumber";
 import { DeleteIssuePage } from "../../page/issue_module.page/delete_issue.page";
 
@@ -34,4 +35,5 @@ Then(/^Message box is displays/, async function (this: World) {
   deleteIssuePage = new DeleteIssuePage(this.driver);
   await deleteIssuePage.messageBoxDeleteIssueDisplays();
   await this.driver.sleep(3000);
+  assert.equal(deleteIssuePage, true)
 });

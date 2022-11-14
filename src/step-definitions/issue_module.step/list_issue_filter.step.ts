@@ -1,3 +1,4 @@
+import assert from "assert";
 import { Given, When, Then, World } from "cucumber";
 import { ListIssueFilterPage } from "../../page/issue_module.page/list_issue_filter.page";
 
@@ -41,5 +42,5 @@ When(/^User select "Task" issue type/, async function (this: World) {
 Then(/^Issue with type "Task" displays/, async function (this: World) {
   listIssueFilter = new ListIssueFilterPage(this.driver);
   await listIssueFilter.isTaskFilterDisplays();
-  await this.driver.sleep(4000);
+  assert.equal(listIssueFilter, true);
 });

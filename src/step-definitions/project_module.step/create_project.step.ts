@@ -44,7 +44,6 @@ When(
   /^User select Create project in drop down menu$/,
   async function (this: World) {
     await project.clickCreateProject();
-    
     await driver.sleep(3000);
   }
 );

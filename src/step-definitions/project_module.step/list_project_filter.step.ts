@@ -1,3 +1,4 @@
+import assert from "assert";
 import { Given, When, Then, World } from "cucumber";
 import { SearchProjectByFilterPage } from "../../page/project_module.page/list_project_filter.page";
 
@@ -35,5 +36,6 @@ Then(
   async function (this: World) {
     ListProjectByFilter = new SearchProjectByFilterPage(this.driver);
     await ListProjectByFilter.isDisplayProjectsByFilter();
+    assert.equal(ListProjectByFilter, true);
   }
 );
