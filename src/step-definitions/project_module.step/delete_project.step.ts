@@ -1,3 +1,4 @@
+import assert from "assert";
 import { Given, When, Then, World } from "cucumber";
 import { DeleteProjectPage } from "../../page/project_module.page/delete_project.page";
 
@@ -41,4 +42,5 @@ When(
 Then(/^Messages box displays "successfully"/, async function (this: World) {
   deleteProjectStep = new DeleteProjectPage(this.driver);
   await deleteProjectStep.messageBoxDisplays();
+  assert.equal(deleteProjectStep, true);
 });

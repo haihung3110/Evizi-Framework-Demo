@@ -1,3 +1,4 @@
+import assert from "assert";
 import { Given, When, Then, World } from "cucumber";
 import { CreateIssuePage } from "../../page/issue_module.page/create_issue.page";
 
@@ -47,5 +48,6 @@ Then(
   async function (this: World) {
     createIssuePage = new CreateIssuePage(this.driver);
     await createIssuePage.messageBoxNewIssueCreateDisplays();
+    assert.equal(createIssuePage, true);
   }
 );
