@@ -14,7 +14,7 @@ Given(
 );
 
 When(
-  /^User select "Evizi-Hung-Training" project/,
+  /^User click "Evizi-Training-Manual" project/,
   async function (this: World) {
     createIssuePage = new CreateIssuePage(this.driver);
     await createIssuePage.clickProjectExist();
