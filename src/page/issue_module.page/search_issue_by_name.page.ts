@@ -8,9 +8,9 @@ export class SearchIssueByName extends SeleniumWebdriverWrapper {
 
   // locator for SearchIssueByName
 
-  jiraWorkManagementBtn: ByHash = {
-    xpath: `//button[contains(.,'Jira Work Management') and contains(.,'hungphan-training-fresher')]`,
-  };
+  jiraWorkManagementBtn = By.xpath(
+    `//button[contains(.,'Jira Work Management') and contains(.,'hungphan-training-fresher')]`
+  );
 
   projectEviziTrainingManual = By.xpath(`//a[@href="/browse/TICKET"]`);
 
@@ -22,9 +22,9 @@ export class SearchIssueByName extends SeleniumWebdriverWrapper {
 
   // method for SearchIssueByName
 
-  clickJiraWorkManagement = async () => {
-    await this.click(this.jiraWorkManagementBtn);
-  };
+  public async clickJiraWorkManagement() {
+    await this.driver.findElement(this.jiraWorkManagementBtn).click();
+  }
 
   public async clickProjectExist() {
     await this.driver.findElement(this.projectEviziTrainingManual).click();
