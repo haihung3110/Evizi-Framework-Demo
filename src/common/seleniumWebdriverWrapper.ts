@@ -4,7 +4,7 @@ import {
   WebElementPromise,
   Locator,
   WebElement,
-  Key,
+  Key
 } from "selenium-webdriver";
 import { elementWaitTimeOutValue } from "../common/timeouts";
 

@@ -12,9 +12,6 @@ Given(
     searchIssueByName = new SearchIssueByName(this.driver);
     await searchIssueByName.clickJiraWorkManagement();
     await this.driver.sleep(3000);
-    // await driverWrapper.waitUntilElementLoadedAndDisplayed(
-    //   searchIssueByName.clickJiraWorkManagement
-    // );
   }
 );
 
